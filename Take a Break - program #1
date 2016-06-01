@@ -1,0 +1,11 @@
+import time
+import webbrowser
+
+breaks = 3
+break_value = 0
+
+print(time.ctime())
+while(break_value<breaks):
+    time.sleep(5)
+    webbrowser.open_new("https://youtube.com")
+    break_value = break_value+1

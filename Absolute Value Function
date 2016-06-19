@@ -1,0 +1,9 @@
+def absolute_value():
+# take any number and give the absolute value
+    numbers = range(-100,10)
+    for i in numbers:
+        if abs(i) < 20:
+            print(i)
+        else:
+            print("greater than 20")
+absolute_value()

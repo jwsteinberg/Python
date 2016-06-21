@@ -1,15 +1,19 @@
-import urllib.request
+# This program alerts the user if there is profanity in a text file
 
+import urllib.request
+# Read the text file from it's location on your computer
 def read_text():
     quotes = open(r"C:\Users\Yoni\python\xxxxxxxxxxxxxx.txt")
     some_text = quotes.read()
     quotes.close()
     profanity_checker(some_text)
-
+    
+# Run the text file on the profanity checker
 def profanity_checker(text_to_check):
     connection = urllib.request.urlopen("http://www.wdylike.appspot.com/?q="+urllib.parse.quote(text_to_check))
     output = connection.read()
     connection.close()
+# Indicate if there are curse words present in text
     if "false" in str(output):
         print("No curse words")
     elif "true" in str(output): 

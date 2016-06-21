@@ -1,0 +1,20 @@
+import urllib.request
+
+def read_text():
+    quotes = open(r"C:\Users\Yoni\python\xxxxxxxxxxxxxx.txt")
+    some_text = quotes.read()
+    quotes.close()
+    profanity_checker(some_text)
+
+def profanity_checker(text_to_check):
+    connection = urllib.request.urlopen("http://www.wdylike.appspot.com/?q="+urllib.parse.quote(text_to_check))
+    output = connection.read()
+    connection.close()
+    if "false" in str(output):
+        print("No curse words")
+    elif "true" in str(output): 
+        print("profanity alert")
+    else:
+        print("not enough information")
+    
+read_text()
